@@ -4,7 +4,7 @@
 #
 Name     : deprecated-Cython
 Version  : 0.29.6
-Release  : 75
+Release  : 76
 URL      : https://files.pythonhosted.org/packages/36/da/fcb979fc8cb486a67a013d6aefefbb95a3e19e67e49dff8a35e014046c5e/Cython-0.29.6.tar.gz
 Source0  : https://files.pythonhosted.org/packages/36/da/fcb979fc8cb486a67a013d6aefefbb95a3e19e67e49dff8a35e014046c5e/Cython-0.29.6.tar.gz
 Summary  : The Cython compiler for writing C extensions for the Python language.
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554310690
+export SOURCE_DATE_EPOCH=1554311051
 export MAKEFLAGS=%{?_smp_mflags}
 python2 setup.py build -b py2
 
@@ -88,9 +88,9 @@ python2 -tt setup.py build -b py2 install --root=%{buildroot}
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/cygdb
-/usr/bin/cython
-/usr/bin/cythonize
+%exclude /usr/bin/cygdb
+%exclude /usr/bin/cython
+%exclude /usr/bin/cythonize
 
 %files legacypython
 %defattr(-,root,root,-)
